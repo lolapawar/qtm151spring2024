@@ -36,7 +36,7 @@ panel on the left:
 
 Delete existing table
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@postgres
+-- Active: 1711316781367@@127.0.0.1@5432@lolapawar
 -- If the table already exists we can drop it:
 -- If it doesn't exist nothing happens
 -- System commands are in upper case and user defined
@@ -76,7 +76,9 @@ INSERT INTO drivers  VALUES (4, 'Fernando Alonso', 'Spanish',32);
 INSERT INTO drivers  VALUES (3, 'Sebastian Vettel', 'German',91);
 
 INSERT INTO drivers  VALUES (2, 'Michael Schumacher', 'German',53);
+SELECT * FROM drivers 
 
+DELETE FROM drivers WHERE driver_id=4
 -- SQLBook: Markup
 <font size="5"> 
 
@@ -103,6 +105,7 @@ Try it yourself!
 INSERT INTO drivers VALUES (5, 'Max Verstappen', 'Dutch', 51);
 INSERT INTO drivers VALUES (6, 'Juan Pablo Montoya', 'Colombian', 6);
 
+SELECT * FROM drivers;
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Dataset Operations </span>
 
@@ -154,6 +157,8 @@ SELECT SUM(victories) AS sum_victories,
        MIN(victories) AS min_victories,
        MAX(victories) AS max_victories
 FROM drivers;
+
+SELECT * FROM drivers;
 -- SQLBook: Markup
 <font size="5"> 
 
@@ -161,7 +166,7 @@ Sort
 -- SQLBook: Code
 -- Order in ascending order of victories
 -- Remember that * means that all columns are selected
-SELECT driver_name FROM drivers
+SELECT driver_name, victories FROM drivers
 ORDER BY victories ASC;
 
 -- Order in descending order of victories
